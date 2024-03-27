@@ -3,7 +3,7 @@ import HtmlWebpackPlugin from "html-webpack-plugin";
 import webpack from "webpack";
 
 const config: webpack.Configuration = {
-  mode: "production",
+  mode: "development",
   entry: path.resolve(__dirname, "src", "index.ts"),
   module: {
     rules: [
