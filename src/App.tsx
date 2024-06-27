@@ -5,7 +5,6 @@ import { Link } from "react-router-dom";
 import { MainPageLazy } from "./pages/MainPage/MainPage.lazy";
 import { AboutPageLazy } from "./pages/AboutPage/AboutPage.lazy";
 import { Suspense } from "react";
-import { useTheme } from "./theme/useTheme";
 
 enum Theme {
   LIGHT = "light",
@@ -13,10 +12,18 @@ enum Theme {
 }
 
 const App = () => {
-  const { theme, changeTheme } = useTheme();
+  const [theme, setTheme] = useState<Theme>(Theme.LIGHT);
+  const toggleTheme = () => {
+    if (theme === Theme.LIGHT) {
+      setTheme(Theme.DARK);
+    }
+    if (theme === Theme.DARK) {
+      setTheme(Theme.LIGHT);
+    }
+  };
   return (
     <div className={`app ${theme} `}>
-      <button onClick={changeTheme}>Theme</button>
+      <button onClick={() => toggleTheme()}>Theme</button>
       <Link to={"/"}>Главная</Link>
       <br />
       <Link to={"/about"}>О сайте</Link>
