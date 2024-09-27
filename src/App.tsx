@@ -5,28 +5,24 @@ import { Link } from "react-router-dom";
 import { MainPageLazy } from "./pages/MainPage/MainPage.lazy";
 import { AboutPageLazy } from "./pages/AboutPage/AboutPage.lazy";
 import { Suspense } from "react";
-
-enum Theme {
-  LIGHT = "light",
-  DARK = "dark",
-}
+import { ThemeContext } from "./theme/ThemeContext";
+import { classNames } from "./helpers/classNames/classNames";
 
 const App = () => {
-  const [theme, setTheme] = useState<Theme>(Theme.LIGHT);
-  const toggleTheme = () => {
-    if (theme === Theme.LIGHT) {
-      setTheme(Theme.DARK);
-    }
-    if (theme === Theme.DARK) {
-      setTheme(Theme.LIGHT);
-    }
-  };
+  const { theme, changeTheme } = useContext(ThemeContext);
+
   return (
-    <div className={`app ${theme} `}>
-      <button onClick={() => toggleTheme()}>Theme</button>
+    <div
+      className={classNames(
+        "app",
+        { click: true, hover: true, selectable: false },
+        [theme]
+      )}
+    >
       <Link to={"/"}>Главная</Link>
       <br />
       <Link to={"/about"}>О сайте</Link>
+      <button onClick={changeTheme}>Theme</button>
       <Suspense fallback={<div>Loading...</div>}>
         <Routes>
           <Route path={"/"} element={<MainPageLazy />} />
