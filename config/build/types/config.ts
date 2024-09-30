@@ -4,6 +4,7 @@ export interface BuildPaths {
   entry: string; // путь до энтри пойинт
   build: string; // путь до папки build с файлами которые минифицированы
   html: string; // путь до index.html файла
+  src: string;
 }
 
 export interface BuildEnv {

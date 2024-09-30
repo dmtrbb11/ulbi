@@ -1,5 +1,9 @@
 import React, { FC } from "react";
-import { LOCAL_STOTAGE_THEME_KEY, Theme, ThemeContext } from "./ThemeContext";
+import {
+  LOCAL_STOTAGE_THEME_KEY,
+  Theme,
+  ThemeContext,
+} from "../lib/ThemeContext";
 
 const initialTheme =
   (localStorage.getItem(LOCAL_STOTAGE_THEME_KEY) as Theme) || Theme.LIGHT;

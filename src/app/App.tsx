@@ -2,11 +2,11 @@ import React, { useContext, useState } from "react";
 import "./styles/index.scss";
 import { Route, Routes } from "react-router";
 import { Link } from "react-router-dom";
-import { MainPageLazy } from "./pages/MainPage/MainPage.lazy";
-import { AboutPageLazy } from "./pages/AboutPage/AboutPage.lazy";
+import { MainPageLazy } from "pages/MainPage";
+import { AboutPageLazy } from "pages/AboutPage";
 import { Suspense } from "react";
-import { ThemeContext } from "./theme/ThemeContext";
-import { classNames } from "./helpers/classNames/classNames";
+import { ThemeContext } from "./providers/ThemeProvider/lib/ThemeContext";
+import { classNames } from "shared/lib/classNames/classNames";
 
 const App = () => {
   const { theme, changeTheme } = useContext(ThemeContext);
