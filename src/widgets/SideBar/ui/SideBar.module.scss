@@ -1,0 +1,13 @@
+.SideBar_wrapper {
+  background-color: var(--inverted-bg-color);
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: width 0.3s;
+  
+}
+
+.open {
+  width: 300px;
+  height: 100%;
+}

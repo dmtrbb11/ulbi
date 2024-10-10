@@ -1,0 +1,19 @@
+.NavBar_wrapper {
+  display: flex;
+  justify-content: space-between;
+  padding: 2rem;
+  background-color: var(--inverted-bg-color);
+}
+
+.links_wrapper {
+  a {
+    text-decoration: none;
+    color: var(--second-color);
+  }
+  a:last-child {
+    margin-left: 1rem;
+  }
+  a:hover {
+    text-decoration: underline;
+  }
+}
