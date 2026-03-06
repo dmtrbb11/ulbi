@@ -7,7 +7,9 @@ interface ThemeSwitcherProps {
   additionalClassName?: string;
 }
 
-const ThemeSwitcher = ({ additionalClassName }: ThemeSwitcherProps) => {
+const ThemeSwitcher = ({
+  additionalClassName: _additionalClassName,
+}: ThemeSwitcherProps) => {
   const { changeTheme } = useContext(ThemeContext);
   return (
     <button className={classNames(s.theme_btn, {})} onClick={changeTheme}>

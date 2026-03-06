@@ -1,7 +1,5 @@
-import { Link } from "react-router-dom";
 import { classNames } from "shared/lib/classNames/classNames";
 import s from "./SideBar.module.scss";
-import { ThemeSwitcher } from "widgets/ThemeSwitcher";
 import React from "react";
 
 interface SideBarProps {

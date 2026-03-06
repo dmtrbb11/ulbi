@@ -1,3 +1,4 @@
+import React from "react";
 import { Suspense } from "react";
 import { Route, Routes } from "react-router-dom";
 import { RoutesConfigObject } from "shared/config/RouterConfig/RouterConfig";

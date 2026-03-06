@@ -8,8 +8,8 @@ export const classNames = (
   return [
     cls,
     ...Object.entries(mods)
-      .filter(([effectName, value]) => value)
-      .map(([effectName, value]) => effectName),
+      .filter(([_, value]) => value)
+      .map(([effectName, _]) => effectName),
     ...additional.filter(Boolean),
   ].join(" ");
 };
