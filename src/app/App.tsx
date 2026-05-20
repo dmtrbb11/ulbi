@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { Suspense, useContext } from "react";
 import "./styles/index.scss";
 import { ThemeContext } from "./providers/ThemeProvider";
 import { classNames } from "shared/lib/classNames/classNames";
@@ -10,11 +10,13 @@ const App = () => {
   const { theme } = useContext(ThemeContext);
 
   return (
-    <div className={classNames("app", {}, [theme])}>
-      <NavBar />
-      <SideBar />
-      <AppRouterProvider />
-    </div>
+    <Suspense fallback="loading">
+      <div className={classNames("app", {}, [theme])}>
+        <NavBar />
+        <SideBar />
+        <AppRouterProvider />
+      </div>
+    </Suspense>
   );
 };
 

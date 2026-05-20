@@ -4,9 +4,35 @@
   top: 0;
   left: 0;
   transition: width 0.3s;
+  display: flex;
+  flex-direction: column;
+}
+
+.SideBar_content {
+  display: none;
+}
+
+.btn {
+  max-width: 80px;
+  margin: 15px auto;
+  padding: 5px;
 }
 
 .open {
   width: 300px;
   height: 100%;
+}
+
+.open_content {
+  display: flex;
+  flex-direction: column;
+}
+
+.sideBar_switcher {
+  max-width: 100px;
+}
+
+.sideBar_lang_switcher {
+  margin-top: 20px;
+  max-width: 100px;
 }
